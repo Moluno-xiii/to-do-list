@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.inline{
+  display: inline-block;
+}
+
+.checked{
+ text-decoration: line-through;
+}
+
+li{
+  list-style: none;
+  text-transform: capitalize;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +49,5 @@
     transform: rotate(360deg);
   }
 }
+
+
