@@ -34,9 +34,17 @@ function App() {
     console.log(newItems);
   };
 
-  const toggleChecked = () => {
-    setChecked(!checked);
+  // const toggleChecked = () => {
+  //   setChecked(!checked);
+  // };
+
+  const toggleChecked = (index) => {
+    const updatedItems = [...item]; // Create a copy of the items array
+    updatedItems[index].checked = !updatedItems[index].checked; // Toggle the checked property
+  
+    setItems(updatedItems); // Update the state with the modified array
   };
+  
 
   const addItems = (newItem) => {
     setItems([...item, newItem]);
@@ -96,7 +104,7 @@ const Main = ({ item, setItems, toggle, checked }) => {
             <li className={itemIn.checked ? "inline checked" : "inline"}>
               {itemIn.name}{" "}
             </li>{" "}
-            <input type="checkbox" className="inline" onChange={() =>toggle(i)} />
+            <input type="checkbox" className="inline" checked={itemIn.checked} onChange={() =>toggle(i)} />
           </ul>
         );
       })}
