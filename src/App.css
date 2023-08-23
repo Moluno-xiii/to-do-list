@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -15,7 +15,12 @@ li{
   text-transform: capitalize;
 }
 
-/* styles.css */
+
+
+
+
+
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -78,3 +83,80 @@ body {
 }
 
 
+
+ */
+
+
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8; /* Soft blue-gray */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+  background-color: #18a2b8; /* Vibrant teal */
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: #18a2b8; /* Vibrant teal */
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.header button.submit {
+  background-color: #18a2b8; /* Vibrant teal */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.clear {
+  background-color: #d9534f; /* Red */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.inline {
+  display: inline-block;
+  margin-right: 10px;
+  color: #808080; /* Gray */
+}
+
+.inline.checked {
+  text-decoration: line-through;
+  color: #808080; /* Gray */
+}
+
+.inline[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 5px;
+  color: #18a2b8; /* Vibrant teal */
+}

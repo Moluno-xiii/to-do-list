@@ -14,7 +14,7 @@ const ArrayOf = [
 ];
 
 function App() {
-  const [item, setItems] = useState(ArrayOf);
+  const [item, setItems] = useState([]);
   const [checked, setChecked] = useState(false);
   const [input, setInput] = useState("");
 
@@ -39,10 +39,10 @@ function App() {
   // };
 
   const toggleChecked = (index) => {
-    const updatedItems = [...item]; // Create a copy of the items array
-    updatedItems[index].checked = !updatedItems[index].checked; // Toggle the checked property
+    const updatedItems = [...item];
+    updatedItems[index].checked = !updatedItems[index].checked; 
   
-    setItems(updatedItems); // Update the state with the modified array
+    setItems(updatedItems);
   };
   
 
@@ -104,7 +104,7 @@ const Main = ({ item, setItems, toggle, checked }) => {
             <li className={itemIn.checked ? "inline checked" : "inline"}>
               {itemIn.name}{" "}
             </li>{" "}
-            <input type="checkbox" className="inline" checked={itemIn.checked} onChange={() =>toggle(i)} />
+            <input type="checkbox" className="inline" onChange={() =>toggle(i)} />
           </ul>
         );
       })}
