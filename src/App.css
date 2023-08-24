@@ -169,7 +169,7 @@ input:focus {
 
 .text-field {
   background-color: #f8f8f8;
-  width: 400px;
+  width: 40vw;
   padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
@@ -186,4 +186,13 @@ input:focus {
   overflow-y: auto; 
 }
 
+.text-field button {
+  background-color: #d9534f; /* Red */
+  color: white;
+  border: none;
+  padding: 2px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+}
 

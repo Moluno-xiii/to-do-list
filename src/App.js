@@ -18,7 +18,15 @@ function App() {
   const [checked, setChecked] = useState(false);
   const [input, setInput] = useState("");
 
+  const handleDelete = (index) => {
+    const updatedItems = [...item]
+    updatedItems.splice(index,  1)
+    setItems(updatedItems)
+
+  }
+
   const handleChange = (e) => {
+    if (!input) return;
     e.preventDefault();
     setInput("");
     // console.log(input);
@@ -64,6 +72,7 @@ function App() {
         setItems={setItems}
         toggle={toggleChecked}
         checked={checked}
+        handleDelete={handleDelete}
       />
     </div>
   );
@@ -95,7 +104,7 @@ const Header = ({ handleChange, setInput, input }) => {
   );
 };
 
-const Main = ({ item, setItems, toggle, checked }) => {
+const Main = ({ item, setItems, toggle, checked, handleDelete }) => {
   const clearList = () => {
     setItems([]);
   };
@@ -108,14 +117,15 @@ const Main = ({ item, setItems, toggle, checked }) => {
         item.map((itemIn, i) => {
           return (
             <ul key={i}>
-              <li className={itemIn.checked ? "inline checked" : "inline"}>
-                {itemIn.name}
-              </li>{" "}
               <input
                 type="checkbox"
                 className="inline"
                 onChange={() => toggle(i)}
               />
+              <li className={itemIn.checked ? "inline checked" : "inline"}>
+                {itemIn.name}
+              </li>{" "}
+              <button className="inline" onClick={handleDelete}>delete</button>
             </ul>
           );
         })
