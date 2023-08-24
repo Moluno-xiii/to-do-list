@@ -2,16 +2,16 @@
 import { useState } from "react";
 import "./App.css";
 
-const ArrayOf = [
-  {
-    name: "book",
-    checked: false,
-  },
-  {
-    name: "frame",
-    checked: false,
-  },
-];
+// const ArrayOf = [
+//   {
+//     name: "book",
+//     checked: false,
+//   },
+//   {
+//     name: "frame",
+//     checked: false,
+//   },
+// ];
 
 function App() {
   const [item, setItems] = useState([]);
@@ -20,7 +20,8 @@ function App() {
 
   const handleChange = (e) => {
     e.preventDefault();
-    console.log(input);
+    setInput("");
+    // console.log(input);
 
     const newItems = {
       name: input,
@@ -31,7 +32,7 @@ function App() {
 
     addItems(newItems);
 
-    console.log(newItems);
+    // console.log(newItems);
   };
 
   // const toggleChecked = () => {
@@ -40,11 +41,10 @@ function App() {
 
   const toggleChecked = (index) => {
     const updatedItems = [...item];
-    updatedItems[index].checked = !updatedItems[index].checked; 
-  
+    updatedItems[index].checked = !updatedItems[index].checked;
+
     setItems(updatedItems);
   };
-  
 
   const addItems = (newItem) => {
     setItems([...item, newItem]);
@@ -81,6 +81,11 @@ const Header = ({ handleChange, setInput, input }) => {
           value={input}
           onChange={(event) => setInput(event.target.value)}
           placeholder="input name"
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              handleChange(event);
+            }
+          }}
         />
         <button className="submit" onClick={handleChange}>
           Add
@@ -95,19 +100,27 @@ const Main = ({ item, setItems, toggle, checked }) => {
     setItems([]);
   };
   return (
-    <div className="">
+    <div className="text-field">
       <h1>Todo List</h1>
-      {/* {item.length > 0 ? <p>this item</p> :<p>No items Yet </p>} */}
-      {item.map((itemIn, i) => {
-        return (
-          <ul key={i}>
-            <li className={itemIn.checked ? "inline checked" : "inline"}>
-              {itemIn.name}{" "}
-            </li>{" "}
-            <input type="checkbox" className="inline" onChange={() =>toggle(i)} />
-          </ul>
-        );
-      })}
+      {item.length <= 0 ? (
+        <p>No items Yet </p>
+      ) : (
+        item.map((itemIn, i) => {
+          return (
+            <ul key={i}>
+              <li className={itemIn.checked ? "inline checked" : "inline"}>
+                {itemIn.name}
+              </li>{" "}
+              <input
+                type="checkbox"
+                className="inline"
+                onChange={() => toggle(i)}
+              />
+            </ul>
+          );
+        })
+      )}
+
       <button className="clear" onClick={clearList}>
         Clear All
       </button>

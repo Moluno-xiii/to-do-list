@@ -86,7 +86,7 @@ body {
 
  */
 
-
+/* 
  body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -96,18 +96,19 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f4f8; /* Soft blue-gray */
+  background-color: #f0f4f8;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  text-transform: capitalize;
 }
 
 .App {
@@ -147,16 +148,42 @@ body {
 .inline {
   display: inline-block;
   margin-right: 10px;
-  color: #808080; /* Gray */
+  color: black;
+
 }
 
 .inline.checked {
   text-decoration: line-through;
-  color: #808080; /* Gray */
+  color: teal;
 }
 
 .inline[type="checkbox"] {
   transform: scale(1.5);
   margin-right: 5px;
-  color: #18a2b8; /* Vibrant teal */
+  color: #18a2b8;
 }
+
+input:focus {
+  outline: none;
+}
+
+.text-field {
+  background-color: #f8f8f8;
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-field textarea {
+  width: 100%;
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 40px; /* Set a minimum height to prevent extreme shrinking */
+  border: none; /* Remove textarea border */
+  outline: none; /* Remove textarea outline */
+  padding: 0; /* Remove padding to fit content better */
+  overflow-y: auto; 
+}
+
+
