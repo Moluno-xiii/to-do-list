@@ -2,16 +2,6 @@
 import { useState } from "react";
 import "./App.css";
 
-// const ArrayOf = [
-//   {
-//     name: "book",
-//     checked: false,
-//   },
-//   {
-//     name: "frame",
-//     checked: false,
-//   },
-// ];
 
 function App() {
   const [item, setItems] = useState([]);
