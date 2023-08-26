@@ -33,9 +33,7 @@ function App() {
     // console.log(newItems);
   };
 
-  // const toggleChecked = () => {
-  //   setChecked(!checked);
-  // };
+
 
   const toggleChecked = (index) => {
     const updatedItems = [...item];
@@ -69,7 +67,7 @@ function App() {
 }
 
 const Header = ({ handleChange, setInput, input }) => {
-  // const [item , setItems] = useState(ArrayOf)
+
 
   return (
     <div className="">
