@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+
 import { useState } from "react";
 import "./App.css";
 
@@ -126,8 +126,6 @@ const Main = ({ item, setItems, toggle, checked, handleDelete }) => {
   );
 };
 
-// const item1 = () => {
-//   return <div className=""></div>;
-// };
+
 
 export default App;
